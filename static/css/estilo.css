@@ -1,0 +1,190 @@
+/* Configuracion general */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #1e3a5f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* Contenedor principal */
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+/* Titulos */
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button, .boton {
+    background-color: #1e3a5f;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+button:hover, .boton:hover {
+    background-color: #315d8c;
+}
+
+/* Tabla */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #1e3a5f;
+    color: white;
+}
+
+/* Mensajes */
+.mensaje {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Pie de pagina */
+footer {
+    background-color: #1e3a5f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    nav a {
+        display: block;
+        margin: 12px;
+    }
+
+    .contenedor {
+        width: 95%;
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 13px;
+    }
+}
+
+/* Pagina principal */
+
+.inicio {
+    width: 90%;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 50px 25px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.inicio h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.inicio p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.acciones {
+    display: flex;
+    justify-content: center;
+}
+
+.inicio .boton {
+    display: inline-block;
+    min-width: 200px;
+}
+
+@media (max-width: 600px) {
+
+    .inicio {
+        margin: 25px auto;
+        padding: 30px 15px;
+    }
+
+    .inicio h2 {
+        font-size: 22px;
+    }
+
+}

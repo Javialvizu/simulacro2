@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block title %}Estudiantes{% endblock %}
+
+{% block body %}
+
+<section class="contenedor">
+
+    <h2>Registro de estudiantes</h2>
+
+    <!-- Mensajes de Flask -->
+    {% with mensajes = get_flashed_messages(with_categories=true) %}
+
+        {% if mensajes %}
+
+            {% for categoria, mensaje in mensajes %}
+
+                <div class="mensaje {{ categoria }}">
+                    {{ mensaje }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    {% endwith %}
+
+
+    <!-- Formulario -->
+    <form method="POST" action="{{ url_for('estudiantes') }}">
+
+        <label>Nombre completo:</label>
+        <input type="text" name="nombre" required>
+
+        <label>Carnet:</label>
+        <input type="text" name="carnet" required>
+
+        <label>Carrera:</label>
+        <input type="text" name="carrera" required>
+
+        <label>Correo:</label>
+        <input type="email" name="correo" required>
+
+        <button type="submit">Registrar estudiante</button>
+
+    </form>
+
+
+    <!-- Tabla de estudiantes -->
+    <h2>Estudiantes registrados</h2>
+
+    <div class="tabla-contenedor">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Carnet</th>
+                    <th>Carrera</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for estudiante in estudiantes %}
+
+                    <tr>
+                        <td>{{ estudiante[0] }}</td>
+                        <td>{{ estudiante[1] }}</td>
+                        <td>{{ estudiante[2] }}</td>
+                        <td>{{ estudiante[3] }}</td>
+                        <td>{{ estudiante[4] }}</td>
+                    </tr>
+
+                {% else %}
+
+                    <tr>
+                        <td colspan="5">No hay estudiantes registrados.</td>
+                    </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+{% endblock %}

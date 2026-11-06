@@ -8,6 +8,13 @@ from conexion import conectar
 # Creamos la aplicacion Flask
 app = Flask(__name__)
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+app.secret_key = os.getenv("FLASK_SECRET_KEY")
+
 # Configuramos la clave secreta para los mensajes flash
 app.secret_key = "clave_examen_flask"
 
@@ -83,9 +90,8 @@ def estudiantes():
                     cursor.close()
 
             # Cerramos la conexion y redirigimos
-            conexion.close()
 
-            return redirect(url_for("estudiantes"))
+                return redirect(url_for("estudiantes"))
 
         # Consultamos los estudiantes registrados
         cursor = conexion.cursor()
